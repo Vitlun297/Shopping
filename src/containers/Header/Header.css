@@ -1,0 +1,19 @@
+.container-header-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.container-header,.container-menu {
+    margin: 20px 100px;
+}
+.menu-icon{
+    width: 30px;
+    height: 30px;
+}
+.menu-btn{
+    margin: 10px;
+}
