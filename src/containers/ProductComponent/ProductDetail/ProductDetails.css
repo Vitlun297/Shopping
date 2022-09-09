@@ -1,4 +1,67 @@
-
-.ui.grid > .row > .column > img, .ui.grid > .row > img {
-    height: 500px !important;
+.productDetail-content-desc{
+    display: flex;
+    margin: 100px 300px;
+    height: 600px;
+}
+.productDetail-content-img{
+    height: 500px;
+    width: 500px;
+    margin-right: 100px;
+}
+.contact-title{
+    font-size: 30px;
+    color: black;
+    font-weight: 600;
+}
+.productDetail-content-rate-and-review{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.contact-count{
+    margin-left: 20px;
+    font-size: 18px;
+    color: rgb(253, 97, 0);
+}
+.contact-price{
+    color: rgb(253, 97, 0);
+    font-size: 30px;
+    font-weight: 600;
+    margin-top: 50px;
+}
+.contact-description{
+    font-size: 14px;
+    color: rgb(159, 159, 159);
+    margin: 50px 0;
+}
+.ui.animated.button {
+    padding: 15px 80px 15px 80px !important;
+    background-color: rgb(253, 97, 0);
+    color:white;
+}
+.ui.vertical.animated.button .visible.content {
+    margin: 0 auto;
+}
+.line{
+    margin: 50px 0;
+}
+.content-contacts{
+    display: flex;
+    margin-bottom: 20px;
+}
+.contacts-title{
+    margin: auto 60px auto 0;
+    font-size: 16px;
+    font-weight: bold;
+    color:black
+}
+.contacts-desc{
+    color: rgb(159, 159, 159);
+}
+.contacts-img{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(159, 159, 159);
+    margin-right: 20px;
+    border-radius: 5px;
 }

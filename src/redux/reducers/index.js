@@ -3,7 +3,8 @@ import { productsReducerJewelery,
   productsReducerElectronic, 
   selectedProductsReducer,
   productsReducerMenclothing, 
-  productsReducerWomenclothing, 
+  productsReducerWomenclothing,
+  
 } from "./productsReducer";
 const reducers = combineReducers({
   productsElectronic: productsReducerElectronic,
