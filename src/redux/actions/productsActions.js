@@ -7,34 +7,34 @@ export const setProductsJewelery = (productsJewelery) => {
   };
 };
 
-
 export const setProductsElectronic = (productsElectronic) => {
   return {
     type: ActionTypes.SET_PRODUCTS_ELECTRONIC,
     payload: productsElectronic,
   };
 };
-
-
 export const setProductsMenclothing = (productsMenclothing) => {
   return {
     type: ActionTypes.SET_PRODUCTS_MENCLOTHING,
     payload: productsMenclothing,
   };
 };
-
-
-export const setProductsWomenclothing = (productsMenclothing) => {
+export const setProductsWomenclothing = (productsWomenclothing) => {
   return {
     type: ActionTypes.SET_PRODUCTS_WOMENCLOTHING,
-    payload: productsMenclothing,
+    payload: productsWomenclothing,
   };
 };
 
-
 export const selectedProduct = (product) => {
   return {
-    type: ActionTypes.SELECTED_PRODUCTS,
+    type: ActionTypes.SELECTED_PRODUCT,
     payload: product,
+  };
+};
+
+export const removeSelectedProduct = () => {
+  return {
+    type: ActionTypes.REMOVE_SELECTED_PRODUCT,
   };
 };

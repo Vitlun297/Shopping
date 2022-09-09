@@ -2,36 +2,43 @@ import React from "react";
 import { Tabs } from 'antd';
 import './ProductListing.css'
 import 'antd/dist/antd.css';
-import JeweleryComponent from "./ProductComponents/JeweleryComponent/JeweleryComponent";
-import ElectronicsComponent from './ProductComponents/ElectronicsComponent/ElectronicsComponent'
-import MenclothingComponent from './ProductComponents/MenclothingComponent/MenclothingComponent'
-import WomenclothingComponent from './ProductComponents/WomenclothingComponent/WomenclothingComponent'
+import ElectronicsComponent from "./ProductComponent/ElectronicsComponent";
+import JeweleryComponent from "./ProductComponent/JeweleryComponent";
+import MenclothingComponent from "./ProductComponent/MenclothingComponent";
+import WomenclothingComponent from "./ProductComponent/WomenclothingComponent";
+
 const { TabPane } = Tabs;
 
 const ProductPage = () => {
   return (
-    <div className="container-products">
-      <div className="container-products-header">
-        <h1 className="products-header-title">
-          Feature Products
-        </h1>
+    <div className="container-product">
+      <div className="container-product-header">
+        <h1 className="product-header-title">Products</h1>
       </div>
       <Tabs type="card">
         <TabPane tab="Jewelery" key="1">
+          <div className="ui grid container">
             <JeweleryComponent />
+          </div>
         </TabPane>
         <TabPane tab="Electronics" key="2">
+        <div className="ui grid container">
             <ElectronicsComponent />
+          </div>
         </TabPane>
         <TabPane tab="Men's clothing" key="3">
+        <div className="ui grid container">
             <MenclothingComponent />
+          </div>
         </TabPane>
         <TabPane tab="Women's clothing" key="4">
+        <div className="ui grid container">
             <WomenclothingComponent />
+          </div>
         </TabPane>
       </Tabs>
-
     </div>
   );
 };
+
 export default ProductPage;

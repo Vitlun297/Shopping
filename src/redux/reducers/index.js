@@ -1,16 +1,15 @@
 import { combineReducers } from "redux";
-import { 
-  productsReducerJewerely,
-  selectedProductReducer,
-  productsReducerElectronic,
-  productsReducerMenclothing,
-  productsReducerWomenclothing
+import { productsReducerJewelery,
+  productsReducerElectronic, 
+  selectedProductsReducer,
+  productsReducerMenclothing, 
+  productsReducerWomenclothing, 
 } from "./productsReducer";
 const reducers = combineReducers({
-  productsJewerely: productsReducerJewerely,
   productsElectronic: productsReducerElectronic,
+  productsJewelery: productsReducerJewelery,
   productsMenclothing: productsReducerMenclothing,
   productsWomenclothing: productsReducerWomenclothing,
-  product:selectedProductReducer
+  product: selectedProductsReducer,
 });
 export default reducers;

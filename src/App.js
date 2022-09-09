@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductListing from "./containers/ProductListing";
-import "./App.css";
 import Header from "./containers/Header/Header";
-//import ProductDetails from "./containers/ProductComponents/ProductDetail/ProductDetail";
+import "./App.css";
+import ProductDetails from "./containers/ProductComponent/ProductDetail/ProductDetails";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={ProductListing} />
-          {/* <Route path="/product/:id" component={ProductDetails} /> */}
+          <Route path="/product/:productId" component={ProductDetails} />
           <Route>404 Not Found!</Route>
         </Switch>
       </Router>

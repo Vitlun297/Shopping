@@ -1,0 +1,4 @@
+
+.ui.grid > .row > .column > img, .ui.grid > .row > img {
+    height: 500px !important;
+}

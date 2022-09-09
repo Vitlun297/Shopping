@@ -3,7 +3,7 @@ const intialState = {
   products: [],
 };
 
-export const productsReducerJewerely = (state = intialState, { type, payload }) => {
+export const productsReducerJewelery = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_JEWERELY:
       return { ...state, products: payload };
@@ -11,6 +11,7 @@ export const productsReducerJewerely = (state = intialState, { type, payload }) 
       return state;
   }
 };
+
 export const productsReducerElectronic = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_ELECTRONIC:
@@ -19,6 +20,7 @@ export const productsReducerElectronic = (state = intialState, { type, payload }
       return state;
   }
 };
+
 export const productsReducerMenclothing = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_MENCLOTHING:
@@ -35,10 +37,14 @@ export const productsReducerWomenclothing = (state = intialState, { type, payloa
       return state;
   }
 };
-export const selectedProductReducer = (state = intialState, { type, payload }) => {
+
+export const selectedProductsReducer = (state = {}, { type, payload }) => {
+  console.log(type);
   switch (type) {
-    case ActionTypes.SELECTED_PRODUCTS:
+    case ActionTypes.SELECTED_PRODUCT:
       return { ...state, ...payload };
+    case ActionTypes.REMOVE_SELECTED_PRODUCT:
+      return {};
     default:
       return state;
   }
