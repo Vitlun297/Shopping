@@ -11,7 +11,7 @@ const Header = () => {
           <h2>FakeShop</h2>
           </Link>
         <div className="container-menu">
-          <Link to='/card' className="menu-btn">
+          <Link to='/cart' className="menu-btn">
             <img className="menu-icon" srcSet={ShoppingBag} alt="Search" />
           </Link>
         </div>

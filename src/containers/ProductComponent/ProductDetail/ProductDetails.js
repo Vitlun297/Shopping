@@ -6,15 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectedProduct,
   removeSelectedProduct,
-  addToCart
 } from "../../../redux/actions/productsActions";
 import axiosInstance from "../../../utils/Request";
-import {Link} from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import Ins from '../../../akar-icons_instagram-fill.png'
-import Face from '../../../face.png'
-
 
 const ProductDetails = () => {
+  const navigate = useNavigate();
   const { productId } = useParams();
   let product = useSelector((state) => state.product);
   const dispatch = useDispatch();
@@ -32,7 +30,9 @@ const ProductDetails = () => {
       dispatch(removeSelectedProduct());
     };
   }, [productId]);
-
+  const addToCart = () => {
+    navigate("../cart")
+  }
 
   return (
     <div className="container-productDetail">
@@ -55,7 +55,7 @@ const ProductDetails = () => {
               </h2>
               {/* <h3 className="contact-category">{product.category}</h3> */}
               <p className="contact-description">{product.description}</p>
-              <div className="ui vertical animated button" onClick={() => addToCart()} tabIndex="0">
+              <div className="ui vertical animated button" onClick={addToCart} tabIndex="0">
                 <div className="hidden content">
                   <i className="shop icon"></i>
                 </div>
@@ -75,13 +75,13 @@ const ProductDetails = () => {
                   Share On:
                 </p>
                 <Link to='/'>
-                  <img srcSet={Ins} alt="" className="contacts-img"/>
+                  <img srcSet={Ins} alt="" className="contacts-img" />
                 </Link>
                 <Link to='/'>
-                  <img srcSet={Ins} alt="" className="contacts-img"/>
+                  <img srcSet={Ins} alt="" className="contacts-img" />
                 </Link>
                 <Link to='/'>
-                  <img srcSet={Ins} alt="" className="contacts-img"/>
+                  <img srcSet={Ins} alt="" className="contacts-img" />
                 </Link>
               </div>
             </div>

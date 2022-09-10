@@ -1,0 +1,17 @@
+.Form-login{
+    margin: 100px auto;
+    width: 40%;
+}
+.login{
+    margin: 50px auto;
+    padding: 50px 100px;
+}
+.login-title{
+    text-align: center;
+}
+.form-title{
+    text-align: center;
+}
+.LogIn-form{
+    width: 600px;
+}
