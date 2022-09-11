@@ -1,10 +1,9 @@
 import { ActionTypes } from "../constants/action-types";
 const intialState = {
   products: [],
-  cart: [],
-  currentItem: null,
 };
 
+//hiện sản phẩm ở phần products
 export const productsReducerJewelery = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_JEWERELY:
@@ -14,6 +13,7 @@ export const productsReducerJewelery = (state = intialState, { type, payload }) 
   }
 };
 
+//hiện sản phẩm ở phần products
 export const productsReducerElectronic = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_ELECTRONIC:
@@ -23,6 +23,7 @@ export const productsReducerElectronic = (state = intialState, { type, payload }
   }
 };
 
+//hiện sản phẩm ở phần products
 export const productsReducerMenclothing = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_MENCLOTHING:
@@ -32,6 +33,7 @@ export const productsReducerMenclothing = (state = intialState, { type, payload 
   }
 };
 
+//hiện sản phẩm ở phần products
 export const productsReducerWomenclothing = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_WOMENCLOTHING:
@@ -41,6 +43,7 @@ export const productsReducerWomenclothing = (state = intialState, { type, payloa
   }
 };
 
+//hiện chi tiết sản phẩm
 export const selectedProductsReducer = (state = {}, { type, payload }) => {
   console.log(type);
   switch (type) {
@@ -53,52 +56,19 @@ export const selectedProductsReducer = (state = {}, { type, payload }) => {
   }
 };
 
-// export const productsReducerCart = (state = intialState, { type, payload }) => {
-//   switch (type) {
-//     case ActionTypes.ADD_TO_CART:
-//       const item = state.products.find(
-//         (product) => product.id === payload.id
-//       );
-//       const inCart = state.cart.find((item) =>
-//         item.id === payload.id ? true : false
-//       );
 
-//       return {
-//         ...state,
-//         cart: inCart
-//           ? state.cart.map((item) =>
-//             item.id === payload.id
-//               ? { ...item, qty: item.qty + 1 }
-//               : item
-//           )
-//           : [...state.cart, { ...item, qty: 1 }],
-//       };
-
-
-//     case ActionTypes.REMOVE_FROM_CART:
-//       return {
-//         ...state,
-//         cart: state.cart.filter((item) => item.id !== payload.id),
-//       };
-
-
-//     case ActionTypes.ADJUST_QTY:
-//       return {
-//         ...state,
-//         cart: state.cart.map((item) =>
-//           item.id === payload.id
-//             ? { ...item, qty: + payload.qty }
-//             : item
-//         ),
-//       };
-
-
-//     case ActionTypes.LOAD_CURRENT_ITEM:
-//       return {
-//         ...state,
-//         currentItem: payload,
-//       };
-//     default:
-//       return state;
-//   }
-// }
+// thêm sản phẩm vào giỏ hàng
+export const Cart = (cart = [], { type, payload }) => {
+  if (type === "ADD") {
+    let addcart = cart.filter((product) => product.id === payload.id)
+    if (addcart < 1) {
+      return [...cart, payload]
+    } else {
+      return cart
+    }
+  }
+  if (type === "REMOVE") {
+    return cart.filter((item) => item.id !== payload.id);
+  }
+  return cart;
+}

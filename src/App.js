@@ -6,6 +6,7 @@ import Header from "./containers/Header/Header";
 import "./App.css";
 import ProductDetails from "./containers/ProductComponent/ProductDetail/ProductDetails";
 import Login from "./containers/Login/Login"
+import Order from "./containers/ProductComponent/Order/Order";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ProductListing />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/order" element={<Order/>} />
           <Route path="/product/:productId" element={<ProductDetails />} />
           <Route>404 Not Found!</Route>
         </Routes>

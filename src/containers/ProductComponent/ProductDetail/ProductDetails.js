@@ -8,7 +8,7 @@ import {
   removeSelectedProduct,
 } from "../../../redux/actions/productsActions";
 import axiosInstance from "../../../utils/Request";
-import { Link,useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Ins from '../../../akar-icons_instagram-fill.png'
 import useAxios from "../../../hooks/useAxios";
 
@@ -31,10 +31,6 @@ const ProductDetails = () => {
       dispatch(removeSelectedProduct());
     };
   }, [productId]);
-  const addToCart = () => {
-    navigate("../cart")
-  }
-  
   return (
     <div className="container-productDetail">
       {Object.keys(product).length === 0 ? (
@@ -56,7 +52,7 @@ const ProductDetails = () => {
               </h2>
               {/* <h3 className="contact-category">{product.category}</h3> */}
               <p className="contact-description">{product.description}</p>
-              <div className="ui vertical animated button" onClick={addToCart} tabIndex="0">
+              <div className="ui vertical animated button" onClick={() => dispatch({ type: "ADD", payload: product })} tabIndex="0">
                 <div className="hidden content">
                   <i className="shop icon"></i>
                 </div>

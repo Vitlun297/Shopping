@@ -44,34 +44,6 @@ export const addToCart = (productID) => {
   };
 }
 
-export const removeFromCart = (productID) => {
-  return {
-    type: ActionTypes.REMOVE_FROM_CART,
-    payload: {
-      id: productID
-    }
-  };
-}
-
-export const adjustQty = (productID,value) => {
-  return {
-    type: ActionTypes.ADJUST_QTY,
-    payload: {
-      id: productID,
-      qty:value
-    }
-  };
-}
-
-export const loadCurrentitem = (product) => {
-  return {
-    type: ActionTypes.LOAD_CURRENT_ITEM,
-    payload: product
-  };
-}
-
-
-
 export const removeSelectedProduct = () => {
   return {
     type: ActionTypes.REMOVE_SELECTED_PRODUCT,

@@ -11,11 +11,11 @@ const JeweleryComponent = () => {
     const products = useSelector((state) => state.productsJewelery.products);
     const dispatch = useDispatch();
 
-
-    const { response, loading, error } = useAxios({
+    const { response, loading } = useAxios({
         method: 'get',
         url: '/products/category/jewelery'
     });
+
     useEffect(() => {
         if (response !== null) {
             dispatch(setProductsJewelery(response));

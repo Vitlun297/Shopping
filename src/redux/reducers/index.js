@@ -4,6 +4,7 @@ import { productsReducerJewelery,
   selectedProductsReducer,
   productsReducerMenclothing, 
   productsReducerWomenclothing,
+  Cart
   
 } from "./productsReducer";
 const reducers = combineReducers({
@@ -12,5 +13,6 @@ const reducers = combineReducers({
   productsMenclothing: productsReducerMenclothing,
   productsWomenclothing: productsReducerWomenclothing,
   product: selectedProductsReducer,
+  cart:Cart
 });
 export default reducers;
