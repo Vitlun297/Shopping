@@ -51,8 +51,9 @@ function Order() {
     //     }
     // });
     const [form] = Form.useForm();
-    const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+    const onFinish = () => {
+        alert('Order complete! thank you ')
+        navigate("/")
     };
 
     const prefixSelector = (
