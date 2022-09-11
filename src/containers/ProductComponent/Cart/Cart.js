@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import './Cart.css'
 
 
 const token = localStorage.getItem('token')
@@ -12,7 +13,11 @@ function Cart() {
     }
   });
   return (
-    <div>hillllll</div>
+    <div className="container_cart">
+      <h1 className='cart-title'>
+        Shoping Cart
+      </h1>
+    </div>
   )
 }
 

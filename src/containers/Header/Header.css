@@ -8,3 +8,23 @@
     width: 30px;
     height: 30px;
 }
+@media screen and (max-width:600px) {
+    .container-header{
+        margin: 0 10px;
+    }
+}
+@media screen and (min-width:601px) and (max-width:1024px){
+    .container-header{
+        margin: 0 10px;
+    }
+}
+@media screen and (min-width:1025px) and (max-width:1200px) {
+    .container-header{
+        margin: 0 50px;
+    }
+}
+@media screen and (min-width:1201px) and (max-width:1400px) {
+    .container-header{
+        margin: 0 50px;
+    }
+}

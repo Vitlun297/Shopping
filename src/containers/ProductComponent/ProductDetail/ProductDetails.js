@@ -10,12 +10,14 @@ import {
 import axiosInstance from "../../../utils/Request";
 import { Link,useNavigate } from 'react-router-dom'
 import Ins from '../../../akar-icons_instagram-fill.png'
+import useAxios from "../../../hooks/useAxios";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
   const { productId } = useParams();
   let product = useSelector((state) => state.product);
   const dispatch = useDispatch();
+
   const fetchProductDetail = async (id) => {
     const response = await axiosInstance.get(`/products/${id}`)
       .catch((err) => {
@@ -23,7 +25,6 @@ const ProductDetails = () => {
       });
     dispatch(selectedProduct(response.data));
   };
-
   useEffect(() => {
     if (productId && productId !== "") fetchProductDetail(productId);
     return () => {
@@ -33,7 +34,7 @@ const ProductDetails = () => {
   const addToCart = () => {
     navigate("../cart")
   }
-
+  
   return (
     <div className="container-productDetail">
       {Object.keys(product).length === 0 ? (

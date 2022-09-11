@@ -6,7 +6,6 @@ const baseURL = 'https://fakestoreapi.com';
 let headers = {}
 
 const axiosInstance = axios.create({
-    baseURL: baseURL,
     headers,
 });
 
@@ -17,7 +16,6 @@ axiosInstance.interceptors.request.use(
         const token = await localStorage.getItem('token')
         if (token) {
             config.headers.Authorization = `Bearer ${token}`
-            
         }
         return config;
     },
