@@ -68,7 +68,6 @@ function Order() {
             </Select>
         </Form.Item>
     );
-    const [autoCompleteResult, setAutoCompleteResult] = useState([]);
     useEffect(() => {
         if (!localStorage.getItem('token')) {
             navigate("/login");
@@ -79,7 +78,7 @@ function Order() {
             <Form
                 {...formItemLayout}
                 form={form}
-                name="register"
+                name="order"
                 onFinish={onFinish}
                 scrollToFirstError
             >

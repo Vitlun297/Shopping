@@ -8,6 +8,7 @@
 }
 .login-title{
     text-align: center;
+    color:#fc5c42
 }
 .form-title{
     text-align: center;
@@ -43,4 +44,5 @@
     width: 100%;
     background-color:#fc5c42 !important;
     border: 0;
+    height: 50px;
 }

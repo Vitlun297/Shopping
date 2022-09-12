@@ -2,6 +2,8 @@
     margin:100px
 }
 .ant-btn.ant-btn-primary{
+    width: 100%;
     background-color:#fc5c42 !important;
     border: 0;
+    height: 50px;
 }

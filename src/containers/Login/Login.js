@@ -80,7 +80,7 @@ function Login() {
 
                     <Form.Item>
                         <Button type="primary" htmlType="submit" className="login-form-button">
-                            Log in
+                            <p className='btn-login-title'> LogIn </p>
                         </Button>
                     </Form.Item>
                 </Form>
