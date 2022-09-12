@@ -1,7 +1,6 @@
 import React from 'react'
 import 'antd/dist/antd.min.css'
 import './Login.css'
-import { LockOutlined, UserOutlined, LoginOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input } from 'antd'
 import axiosInstance from '../../utils/Request';
 import { Link, useNavigate } from 'react-router-dom'
@@ -27,7 +26,7 @@ function Login() {
     return (
         <div className='Form-login'>
             <div className='login'>
-                <h1 className='login-title'>Login</h1>
+                <h1 className='login-title'>Account</h1>
                 <Form
                     name="normal_login"
                     className="login-form"
@@ -36,9 +35,9 @@ function Login() {
                     }}
                     onFinish={onFinish}
                 >
+                    <p className='form-login-title'>Usename:</p>
                     <Form.Item
                         name="usename"
-
                         rules={[
                             {
                                 required: true,
@@ -46,11 +45,12 @@ function Login() {
                             },
                         ]}
                     >
-                        <Input prefix={<UserOutlined className="site-form-item-icon" />} type="usename" placeholder="Usename"
+                        <Input type="usename"
                             className='input-usename'
                             id="usename"
                         />
                     </Form.Item>
+                    <p className='form-login-title'>Password:</p>
                     <Form.Item
                         name="password"
                         rules={[
@@ -61,10 +61,8 @@ function Login() {
                         ]}
                     >
                         <Input
-                            prefix={<LockOutlined className="site-form-item-icon" />}
                             type="password"
                             className='input-pass'
-                            placeholder="Password"
                         />
                     </Form.Item>
                     <Form.Item>
@@ -78,10 +76,9 @@ function Login() {
                     </Form.Item>
 
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" className="login-form-button" size='large'>
-                            <LoginOutlined />Log in
-                        </Button><br />
-                        Or <Link to="/register">register now!</Link>
+                        <Button type="primary" htmlType="submit" className="login-form-button">
+                            Log in
+                        </Button>
                     </Form.Item>
                 </Form>
             </div>

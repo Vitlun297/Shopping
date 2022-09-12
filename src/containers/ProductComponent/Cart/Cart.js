@@ -41,9 +41,7 @@ function Cart() {
                             onClick={() => {
                               if (product.quantity > 1) {
                                 dispatch({ type: "DECREASE", payload: product });
-                              } else {
-                                dispatch({ type: "REMOVE", payload: product });
-                              }
+                              }else (product.quantity = 0)
                             }}
                           >
                             -
