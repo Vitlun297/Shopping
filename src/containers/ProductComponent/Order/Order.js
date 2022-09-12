@@ -45,11 +45,11 @@ const tailFormItemLayout = {
 
 function Order() {
     const navigate = useNavigate()
-    // useEffect(() => {
-    //     if (!localStorage.getItem('token')) {
-    //         navigate("/login");
-    //     }
-    // });
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            navigate("/login");
+        }
+    });
     const [form] = Form.useForm();
     const onFinish = () => {
         alert('Order complete! thank you ')
@@ -68,32 +68,12 @@ function Order() {
             </Select>
         </Form.Item>
     );
-    const suffixSelector = (
-        <Form.Item name="suffix" noStyle>
-            <Select
-                style={{
-                    width: 70,
-                }}
-            >
-                <Option value="USD">$</Option>
-                <Option value="CNY">¥</Option>
-            </Select>
-        </Form.Item>
-    );
     const [autoCompleteResult, setAutoCompleteResult] = useState([]);
-
-    const onWebsiteChange = (value) => {
-        if (!value) {
-            setAutoCompleteResult([]);
-        } else {
-            setAutoCompleteResult(['.com', '.org', '.net'].map((domain) => `${value}${domain}`));
+    useEffect(() => {
+        if (!localStorage.getItem('token')) {
+            navigate("/login");
         }
-    };
-
-    const websiteOptions = autoCompleteResult.map((website) => ({
-        label: website,
-        value: website,
-    }));
+    });
     return (
         <div className="container-form">
             <Form

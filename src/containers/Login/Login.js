@@ -22,6 +22,9 @@ function Login() {
                 console.log("loi", error)
                 alert('đăng nhập không thành công. Vui lòng thử lại!')
             });
+        localStorage.setItem('token','123')
+        navigate('/order')
+
     }
     return (
         <div className='Form-login'>

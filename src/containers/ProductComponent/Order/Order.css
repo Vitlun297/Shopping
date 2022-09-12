@@ -1,3 +1,7 @@
 .container-form{
     margin:100px
 }
+.ant-btn.ant-btn-primary{
+    background-color:#fc5c42 !important;
+    border: 0;
+}
