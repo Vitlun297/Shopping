@@ -1,17 +1,14 @@
 import { combineReducers } from "redux";
-import { productsReducerJewelery,
-  productsReducerElectronic, 
+import { productsReducer,
   selectedProductsReducer,
-  productsReducerMenclothing, 
-  productsReducerWomenclothing,
   Cart
   
 } from "./productsReducer";
 const reducers = combineReducers({
-  productsElectronic: productsReducerElectronic,
-  productsJewelery: productsReducerJewelery,
-  productsMenclothing: productsReducerMenclothing,
-  productsWomenclothing: productsReducerWomenclothing,
+  productsElectronic: productsReducer,
+  productsJewelery: productsReducer,
+  productsMenclothing: productsReducer,
+  productsWomenclothing: productsReducer,
   product: selectedProductsReducer,
   cart:Cart
 });

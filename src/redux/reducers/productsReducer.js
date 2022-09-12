@@ -4,44 +4,21 @@ const intialState = {
 };
 
 //hiện sản phẩm ở phần products
-export const productsReducerJewelery = (state = intialState, { type, payload }) => {
+export const productsReducer = (state = intialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_PRODUCTS_JEWERELY:
       return { ...state, products: payload };
-    default:
-      return state;
-  }
-};
-
-//hiện sản phẩm ở phần products
-export const productsReducerElectronic = (state = intialState, { type, payload }) => {
-  switch (type) {
     case ActionTypes.SET_PRODUCTS_ELECTRONIC:
       return { ...state, products: payload };
-    default:
-      return state;
-  }
-};
-
-//hiện sản phẩm ở phần products
-export const productsReducerMenclothing = (state = intialState, { type, payload }) => {
-  switch (type) {
     case ActionTypes.SET_PRODUCTS_MENCLOTHING:
       return { ...state, products: payload };
-    default:
-      return state;
-  }
-};
-
-//hiện sản phẩm ở phần products
-export const productsReducerWomenclothing = (state = intialState, { type, payload }) => {
-  switch (type) {
     case ActionTypes.SET_PRODUCTS_WOMENCLOTHING:
       return { ...state, products: payload };
     default:
       return state;
   }
 };
+
 
 //hiện chi tiết sản phẩm
 export const selectedProductsReducer = (state = {}, { type, payload }) => {

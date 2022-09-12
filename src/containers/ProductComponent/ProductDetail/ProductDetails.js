@@ -19,13 +19,17 @@ const ProductDetails = () => {
   const dispatch = useDispatch();
 
   const fetchProductDetail = async (id) => {
+    //call API
     const response = await axiosInstance.get(`/products/${id}`)
       .catch((err) => {
         console.log("Err: ", err);
       });
     dispatch(selectedProduct(response.data));
   };
+
   useEffect(() => {
+
+    //
     if (productId && productId !== "") fetchProductDetail(productId);
     return () => {
       dispatch(removeSelectedProduct());
