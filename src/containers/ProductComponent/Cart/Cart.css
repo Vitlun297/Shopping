@@ -15,7 +15,7 @@
 .cart-img{
     width: 60px;
     height: 60px;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 .title-content{
     font-size: 16px;
@@ -36,14 +36,16 @@
     width: 100px;
 }
 .text{
-    color:rgb(255, 0, 0)
+    color:#fd664a;
+    font-size: 16px;
+    font-weight: 600;
 }
 .btn-quantity{
     width: 30px;
     height: 30px;
-    color:white;
+    color:black;
+    background: #f7f8f2;
     border: 0;
-    background-color: rgb(253, 97, 0);
 }
 .cart-quantity{
     width: 50px;
@@ -53,9 +55,12 @@
 .btn-remove{
     height: 30px;
     width: 60px;
-    background-color: rgb(253, 97, 0);
-    color:white;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: transparent;
+    color:#fd664a;
     border: 0;
+    margin-top: -18px;
     margin-left: 15px;
 }
 .no-product{
@@ -69,6 +74,7 @@
 }
 .cart-imgandtitle.margin{
     margin-top: -20px;
+    background: #f7f8f2;
 }
 .cart-total{
     padding:50px;
@@ -97,6 +103,6 @@
     color:white;
 }
 .line-cart{
-    border: 1px solid rgb(211, 211, 211);
+    border: 1px solid #ededed;
     margin-bottom: 20px;
 }

@@ -60,7 +60,7 @@ const ProductDetails = () => {
               </h2>
               {/* <h3 className="contact-category">{product.category}</h3> */}
               <p className="contact-description">{product.description}</p>
-              <div className="ui vertical animated button" onClick={() => dispatch({ type: "ADD", payload: product })} tabIndex="0">
+              <div className="ui vertical animated button" onClick={() => dispatch({ type: "ADD", payload: product },alert('đã thêm vào giỏ hàng'))} tabIndex="0">
                 <div className="hidden content">
                   <i className="shop icon"></i>
                 </div>

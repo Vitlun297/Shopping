@@ -18,10 +18,9 @@
     border: 0;
 }
 
-.ant-tabs-card.ant-tabs-top>.ant-tabs-nav .ant-tabs-tab-active,
-.ant-tabs-card.ant-tabs-top>div>.ant-tabs-nav .ant-tabs-tab-active {
-    color: black !important;
-    border-bottom-color: #fff;
+.tab-container .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #000000 !important;
+    font-size: 14px;
 }
 
 .ant-tabs {
