@@ -1,19 +1,15 @@
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom'
 import './Cart.css'
+import 'antd/dist/antd.css';
 
-
-const token = localStorage.getItem('token')
-console.log(token)
 function Cart() {
   const cart = useSelector((state) => state.cart);
   console.log(cart)
   const dispatch = useDispatch()
-  const navigate = useNavigate()
   const addition = (acc, currentvalue) => {
-    return acc + currentvalue.price;
+    return acc + currentvalue.price * currentvalue.quantity;
   };
   const total = cart.reduce(addition, 0);
   return (
@@ -28,46 +24,51 @@ function Cart() {
         <p className="no-product">ko có gì trong giỏ hàng</p>
       ) : (
         <>
-          <div className="cart">
-            {cart.map((item) => {
-              return (
-                <div className="cartcad" key={item.id}>
-                  <div className="cart-desc">
-                    <div className="cart-imgandtitle">
-                      <img src={item.image} alt="cart" className="cart-img" />
-                      <h4 className='title-content'>{item.title}</h4>
+          <>
+            <div className="cart">
+              {cart.map((product) => {
+                return (
+                  <>
+                    <div className="cartcad" key={product.id}>
+                      <div className="cart-desc">
+                        <div className="cart-imgandtitle">
+                          <img src={product.image} alt="cart" className="cart-img" />
+                          <h4 className='title-content'>{product.title}</h4>
+                        </div>
+                        <p className='cart-money'><span className='text'>${product.price}</span></p>
+                        <div className="cart-imgandtitle margin">
+                          <button className="btn-quantity"
+                            onClick={() => {
+                              if (product.quantity > 1) {
+                                dispatch({ type: "DECREASE", payload: product });
+                              } else {
+                                dispatch({ type: "REMOVE", payload: product });
+                              }
+                            }}
+                          >
+                            -
+                          </button>
+                          <p className="cart-quantity">{product.quantity}</p>
+                          <button className="btn-quantity"
+                            onClick={() => dispatch({ type: "INCREASE", payload: product })}
+                          >
+                            +
+                          </button>
+                        </div>
+                        <p className='cart-money'><span className='text'>${product.price * product.quantity}</span></p>
+                        <button className="btn-remove"
+                          onClick={() => dispatch({ type: "REMOVE", payload: product })}
+                        >
+                          X
+                        </button>
+                      </div>
                     </div>
-                    <p className='cart-money'> price: <span className='text'>${item.price}</span></p>
-                    <p className='cart-money'> amount: <span className='text'>${item.price}</span></p>
-                    <div className="cart-imgandtitle margin">
-                      <button className="btn-quantity"
-                        onClick={() => dispatch({ type: "INCREASE", payload: item })}
-                      >
-                        +
-                      </button>
-                      <p className="cart-quantity">1</p>
-                      <button className="btn-quantity"
-                        onClick={() => {
-                          if (item.quantity > 1) {
-                            dispatch({ type: "DECREASE", payload: item });
-                          } else {
-                            dispatch({ type: "REMOVE", payload: item });
-                          }
-                        }}
-                      >
-                        -
-                      </button>
-                      <button className="btn-remove"
-                        onClick={() => dispatch({ type: "REMOVE", payload: item })}
-                      >
-                        remove
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+                    <hr className='line-cart' />
+                  </>
+                );
+              })}
+            </div>
+          </>
           <Link to="/" className="btn-back-btn" >
             Continue Shopping
           </Link>
@@ -87,9 +88,11 @@ function Cart() {
             <span className='cart-total-title'>Subtotal:</span>
             <span className='text'>${total}</span>
           </div>
-          <Link to='/order' className='btn-order'>
-            Order
-          </Link>
+          <div className='cart-order-btn'>
+            <Link to='/order' className='btn-order'>
+              Order
+            </Link>
+          </div>
         </div>
       }
     </div>

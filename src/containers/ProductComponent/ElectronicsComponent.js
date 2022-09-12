@@ -28,32 +28,33 @@ const ElectronicsComponent = () => {
 
 
   const renderList = products.map((product) => {
+    product.quantity = 1
     return (
       <>
         {loading ? (
           <p>loading...</p>
         ) : (
           <div className="container-listcard" key={product.id}>
-                        <Link to={`/product/${product.id}`}>
-                            <div className="container-cards">
-                                <div className="card">
-                                    <div className="card-image">
-                                        <LazyLoadImage src={product.image} alt={product.title} className="card-img" />
-                                        <div className="button-hover">
-                                          View Detail
-                                        </div>
-                                    </div>
-                                    <div className="card-content">
-                                        <div className="header-title">{product.title}</div>
-                                        <div className="card-content-bot">
-                                            <Rate allowHalf defaultValue={product.rating.rate} />
-                                            <div className="meta card-price">$ {product.price}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Link>
+            <Link to={`/product/${product.id}`}>
+              <div className="container-cards">
+                <div className="card">
+                  <div className="card-image">
+                    <LazyLoadImage src={product.image} alt={product.title} className="card-img" />
+                    <div className="button-hover">
+                      View Detail
                     </div>
+                  </div>
+                  <div className="card-content">
+                    <div className="header-title">{product.title}</div>
+                    <div className="card-content-bot">
+                      <Rate allowHalf defaultValue={product.rating.rate} />
+                      <div className="meta card-price">$ {product.price}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          </div>
         )}
       </>
     );

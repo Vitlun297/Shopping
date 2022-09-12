@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
 
-    //
+    //kiểm tra id
     if (productId && productId !== "") fetchProductDetail(productId);
     return () => {
       dispatch(removeSelectedProduct());
@@ -37,9 +37,13 @@ const ProductDetails = () => {
   }, [productId]);
   return (
     <div className="container-productDetail">
+
+      {/* check nếu product rỗng */}
       {Object.keys(product).length === 0 ? (
         <div>...Loading</div>
       ) : (
+        product.quantity = 1,
+
         <div className="productDetail-content">
           <div className="productDetail-content-desc">
             <div>

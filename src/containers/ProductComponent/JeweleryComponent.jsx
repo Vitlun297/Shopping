@@ -27,6 +27,7 @@ const JeweleryComponent = () => {
 
 
     const renderList = products.map((product) => {
+        product.quantity = 1
         return (
             <>
                 {loading ? (

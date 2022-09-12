@@ -1,15 +1,16 @@
 .container_cart{
-    margin: 100px 100px;
+    margin: 100px 200px;
 }
 .cart-header-title{
     text-align: center;
     font-weight:600
 }
 .cartcad{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 .cart{
-    margin-top: 50px;
+    margin: 50px 0;
+
 }
 .cart-img{
     width: 60px;
@@ -32,6 +33,7 @@
 }
 .cart-money{
     font-size: 16px;
+    width: 100px;
 }
 .text{
     color:rgb(255, 0, 0)
@@ -80,16 +82,21 @@
 .cart-total-total{
     font-size: 18px;
     display: flex;
+    height: 430px;
     justify-content: space-between;
     margin: 40px 0;
 }
 .btn-back-btn{
     padding: 10px 50px;
     color:black;
-    background-color: rgb(210, 210, 210);
+    background-color: rgb(230, 230, 230);
 }
 .btn-order{
     padding: 20px 105px;
     background-color: rgb(253, 97, 0);
     color:white;
+}
+.line-cart{
+    border: 1px solid rgb(211, 211, 211);
+    margin-bottom: 20px;
 }

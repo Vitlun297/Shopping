@@ -37,7 +37,7 @@ export const selectedProductsReducer = (state = {}, { type, payload }) => {
 // thêm sản phẩm vào giỏ hàng
 export const Cart = (cart = [], { type, payload }) => {
   if (type === "ADD") {
-    let addcart = cart.filter((product) => product.id === payload.id)
+    const addcart = cart.filter((product) => product.id === payload.id)
     if (addcart < 1) {
       return [...cart, payload]
     } else {
@@ -45,7 +45,29 @@ export const Cart = (cart = [], { type, payload }) => {
     }
   }
   if (type === "REMOVE") {
-    return cart.filter((item) => item.id !== payload.id);
+    return cart.filter((product) => product.id !== payload.id);
   }
-  return cart;
+
+  //thêm số lượng
+  if (type === "INCREASE") {
+    let tempcart = cart.map((item) => {
+      if (item.id === payload.id) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    return tempcart;
+  }
+
+  //bớt số lượng
+  if (type === "DECREASE") {
+    let tempcart = cart.map((item) => {
+      if (item.id === payload.id) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    });
+    return tempcart;
+  }
+  return cart
 }

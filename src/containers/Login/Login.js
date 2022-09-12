@@ -17,7 +17,7 @@ function Login() {
         axiosInstance.post('/auth/login', data)
             .then((response) => {
                 localStorage.setItem('token', response.data.token)
-                navigate('../home')
+                navigate('/')
             })
             .catch((error) => {
                 console.log("loi", error)
