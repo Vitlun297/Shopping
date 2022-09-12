@@ -14,14 +14,16 @@ function Cart() {
   const total = cart.reduce(addition, 0);
   return (
     <div className="container_cart">
-      <Link to="/" className="btn-back" >
-        Back
-      </Link>
       <h1 className='cart-header-title'>
         Shoping Cart
       </h1>
       {cart.length === 0 ? (
-        <p className="no-product">ko có gì trong giỏ hàng</p>
+        <div className='no-product-cart'>
+          <p className='no-product-cart-title'>Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+          <Link to='/' className='btn-back-to-shop'>
+            Mua Ngay
+          </Link> 
+        </div>
       ) : (
         <>
           <>

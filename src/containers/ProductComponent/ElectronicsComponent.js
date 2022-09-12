@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Rate } from 'antd';
 import { setProductsElectronic } from "../../redux/actions/productsActions";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { Skeleton } from 'antd';
 import useAxios from "../../hooks/useAxios";
 
 
@@ -32,7 +33,7 @@ const ElectronicsComponent = () => {
     return (
       <>
         {loading ? (
-          <p>loading...</p>
+          <Skeleton active />
         ) : (
           <div className="container-listcard" key={product.id}>
             <Link to={`/product/${product.id}`}>

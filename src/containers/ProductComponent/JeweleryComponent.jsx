@@ -5,6 +5,7 @@ import { Rate } from 'antd';
 import { setProductsJewelery } from "../../redux/actions/productsActions";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useAxios from "../../hooks/useAxios";
+import {Skeleton} from 'antd'
 
 
 const JeweleryComponent = () => {
@@ -31,7 +32,7 @@ const JeweleryComponent = () => {
         return (
             <>
                 {loading ? (
-                    <p>loading...</p>
+                    <Skeleton active />
                 ) : (
                     <div className="container-listcard" key={product.id}>
                         <Link to={`/product/${product.id}`}>
